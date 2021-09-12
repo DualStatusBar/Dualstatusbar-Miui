@@ -1,9 +1,9 @@
 # SystemUI-Patcher
 Based on  systemUI patcher mod used for injecting Xmls to SystemUI on Aosp A11+, Systemlessly. 
 
-Module Template by @Jai_08
+Module Template by [@Jai_08](https://github.com/jairaj08)
 
-By @cool_modules on telegram 
+By @cool_modules](https://t.me/cool_modules) [on telegram 
 
 Feel free to use, modify, distribute as long as a part of credit is present.
 
