@@ -20,7 +20,7 @@
 
 - Just flash in magisk and reboot.
 
-* 5 Features
+### 5 Features
 ```
 - Quick Installation
 - Small size
@@ -28,7 +28,7 @@
 - Multiple Modules work together without issues
 ```
 
-* How to use multiple mods together?
+### How to use multiple mods together?
 ```
 -Flash any 1 module 
 -Reboot
