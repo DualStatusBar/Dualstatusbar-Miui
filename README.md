@@ -34,13 +34,13 @@
 -Reboot
 -Flash another,
 Both will merge automatically and work together
-```
+
 * Alternatively you can merge manually by adding all xml into substratumXML folder
 
 * Edit module prop and enter you module id name and description accordingly. 
 
-* If any issue reach out to me on @cool_modules69 telegram
-
+* If any issue reach out to me on [@cool_modules69](https://t.me/cool_modules69) telegram
+```
 
 ## This is modified version 
 Download and uae the orignal template from here -
