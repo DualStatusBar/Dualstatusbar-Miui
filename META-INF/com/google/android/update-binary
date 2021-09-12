@@ -1,1 +1,131 @@
+#!/sbin/sh
 
+#################
+# Initialization
+#################
+
+umask 022
+
+# echo before loading util_functions
+ui_print() { echo " " ; }
+
+require_new_magisk() {
+  ui_print "*******************************"
+  ui_print " Please install Magisk v20.4+! "
+  ui_print "*******************************"
+  exit 1
+}
+
+#########################
+# Load util_functions.sh
+#########################
+
+OUTFD=$2
+ZIPFILE=$3
+
+mount /data 2>/dev/null
+
+[ -f /data/adb/magisk/util_functions.sh ] || require_new_magisk
+. /data/adb/magisk/util_functions.sh
+[ $MAGISK_VER_CODE -lt 20400 ] && require_new_magisk
+
+if ! $BOOTMODE; then
+ui_print " " 
+  ui_print "This is magisk module" 
+  ui_print "You need to flash in magisk to make it work" 
+  ui_print "Only Uninstalling is supported in recovery" 
+  ui_print " " 
+  ui_print "- Uninstalling now...... "
+  ui_print " " 
+  rm -rf /data/adb/modules_update/DSB 2>/dev/null
+  rm -rf /data/adb/modules/DSB 2>/dev/null
+  ui_print " Uninstall successful" 
+  exit 0
+fi
+
+remove()
+{
+rm -rf /data/adb/modules_update/DSB 2>/dev/null
+  rm -rf /data/adb/modules/DSB 2>/dev/null 
+}
+echo " *******************************************************" 
+echo " Module Template by @Jai_08 // @cool_modules" 
+#Do not remove credit if you are using part of this template.
+echo " MMT EX by Zackptg5  " 
+echo " *******************************************************" 
+install_module
+tar -xf $MODPATH/utils/myutils -C $MODPATH/utils/ 2>/dev/null
+zipp=$MODPATH/utils/zip
+zipa=$MODPATH/utils/zipalign
+file=$MODPATH/jai/MiuiSystemUI.apk
+apath=$MODPATH/j1/MiuiSystemUI
+bpath=$MODPATH/j2/MiuiSystemUI
+spath=/system/system_ext/priv-app/MiuiSystemUI
+mp=/data/adb/modules
+
+set_perm $zipp 0 0 0755
+set_perm $zipa 0 0 0755
+
+echo " 
+█▀▄ █░█ ▄▀█ █░░
+█▄▀ █▄█ █▀█ █▄▄
+
+█▀ ▀█▀ ▄▀█ ▀█▀ █░█ █▀
+▄█ ░█░ █▀█ ░█░ █▄█ ▄█
+
+█▄▄ ▄▀█ █▀█
+█▄█ █▀█ █▀▄ 
+
+- by #DsbTeam // @dualstatusbarMiui
+
+Recommended to use @dsbaddons to change styles and colors
+Bugs? Suggestions? Questions? Reach out on support group
+Support Group - @dualstatusbar on telegram  "
+
+
+if [ -f "$spath/MiuiSystemUI.apk" ]; then
+mkdir -p $MODPATH/jai
+cp -f $spath/MiuiSystemUI.apk $MODPATH/jai/
+ui_print " " 
+ui_print " Processing..... "
+else
+ui_print " This Looks like a non supported Rom..."
+ui_print " Report in support group "
+ui_print " Note : This is Miui A11 Module "
+remove
+exit 1
+fi
+
+cd $MODPATH/utils/jairaj1/MiuiSystemUI/
+$zipp -qq -r $file *
+
+mkdir -p $apath
+$zipa -f 4 $file $apath/MiuiSystemUI.apk
+
+if [ $JDSB = true ] ; then
+mkdir -p $MODPATH/$spath
+$zipa -f 4 $file $MODPATH/$spath/MiuiSystemUI.apk
+echo " Applied Style 1 DSB successfully" 
+fi
+
+cd $MODPATH/utils/jairaj2/MiuiSystemUI/
+$zipp -qq -r $file *
+
+mkdir -p $bpath
+$zipa -f 4 $file $bpath/MiuiSystemUI.apk
+
+if [ $JDSB = false ] ; then
+mkdir -p $MODPATH/$spath
+$zipa -f 4 $file $MODPATH/$spath/MiuiSystemUI.apk
+echo " Applied Style 2 DSB successfully" 
+fi
+
+rm -r $MODPATH/jai/
+rm -r $MODPATH/utils/
+echo " " 
+
+echo " Done..." 
+echo " Reboot to apply changes" 
+echo " " 
+
+exit 0
