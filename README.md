@@ -1,8 +1,11 @@
 # Dualstatusbar - Miui
 <a href="https://t.me/DualstatusbarMiui"><img src=https://telegra.ph/file/b35a82b90c2938835303b.jpg></a>
 
-
-
+## Support Group
+<a href="https://t.me/DualstatusbarMiui"><img src="https://img.shields.io/badge/Channel%20Support%3F-yes-green?&style=flat-square?&logo=telegram" width=220px></a>
+<br>
+<br>
+<a href="https://t.me/miuidsb_support"><img src="https://img.shields.io/badge/Group%20Support%3F-yes-green?&style=flat-square?&logo=telegram" width=220px></a>
 # SystemUI-Patcher
 *  Based on  systemUI patcher mod used for injecting Xmls to SystemUI on Aosp A11+, Systemlessly. 
 
