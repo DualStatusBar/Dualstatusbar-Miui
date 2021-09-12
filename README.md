@@ -42,10 +42,12 @@ Both will merge automatically and work together
 
 * Edit module prop and enter you module id name and description accordingly. 
 
-* If any issue reach out to me on [@cool_modules69](https://t.me/cool_modules69) telegram
+
 ```
 
 ## This is modified version 
 Download and uae the orignal template from here -
 
 https://github.com/jairaj08/SystemUI-Patcher
+
+* If any issue reach out to me on [@cool_modules69](https://t.me/cool_modules69) telegram
