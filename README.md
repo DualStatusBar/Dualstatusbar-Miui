@@ -23,7 +23,7 @@
 
 - Just flash in magisk and reboot.
 
-### 5 Features
+### Features
 ```
 - Quick Installation
 - Small size
