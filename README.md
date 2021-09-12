@@ -1,3 +1,8 @@
+# Dualstatusbar - Miui
+<a href="https://t.me/DualstatusbarMiui"><img src=https://telegra.ph/file/b35a82b90c2938835303b.jpg></a>
+
+
+
 # SystemUI-Patcher
 Based on  systemUI patcher mod used for injecting Xmls to SystemUI on Aosp A11+, Systemlessly. 
 
